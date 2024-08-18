@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #dedede;
+}
+   
+section {
+    width: 100%;
+}
+
+// .mat-row-even {
+//     background-color: red;
+// }
+
+// .mat-mdc-header-row {
+//     background-color: green;
+// }

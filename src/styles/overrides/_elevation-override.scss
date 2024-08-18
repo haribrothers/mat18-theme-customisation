@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../m3-theme' as m3-theme;
+@use '@angular/material/core/style/elevation';
+
+@mixin delta-tgm-elevation-override($theme-colors) {
+    $primary-color: map.get($theme-colors, primary);
+    $accent-color: map.get($theme-colors, secondary);
+    $netural-variant-color: map.get($theme-colors, neutral-variant);
+
+    @for $zValue from 0 through 24 {
+        $shadow: elevation.get-box-shadow($zValue, map.get($netural-variant-color, 80));
+        --mat-app-elevation-shadow-level-#{$zValue}: #{$shadow};
+    }
+}

@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../m3-theme' as m3-theme;
+
+@mixin delta-tgm-button-override($theme-colors) {
+    $primary-color: map.get($theme-colors, primary);
+    $accent-color: map.get($theme-colors, secondary);
+    $netural-variant-color: map.get($theme-colors, neutral-variant);
+
+    @include mat.button-overrides((
+        container-shape: 0,
+        container-color: map.get($primary-color,10),
+        // label-text-color: map.get($netural-variant-color,90),
+    ));
+    .mat-tertiary {
+        @include mat.button-overrides((
+            container-color: map.get($accent-color, 50),
+        ));
+    }
+    .mat-mdc-raised-button {
+        @include mat.button-overrides((
+            container-color: map.get($primary-color,10),
+            label-text-color: map.get($netural-variant-color,90),
+        ));
+    }
+    .mat-mdc-outlined-button {
+        @include mat.button-overrides((
+            container-color: map.get($primary-color,10),
+            outline-color: map.get($primary-color,10),
+            outline-width: 1.5px
+        ));
+    }
+}

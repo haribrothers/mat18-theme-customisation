@@ -1,0 +1,72 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'styles/m3-theme' as m3-theme;
+@use 'styles/overrides/overrides' as overrides;
+// Plus imports for other components in your app.
+
+@include mat.strong-focus-indicators((
+  border-style: dotted,
+  border-width: 4px,
+  border-radius: 2px,
+));
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$mat-theme-app-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$yellow-palette,
+  ),
+  density: (
+    scale: -5,
+  ),
+  typography: (
+    plain-family: "Noto Sans",
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes(m3-theme.$light-theme);
+  // @include mat.all-component-themes($mat-theme-app-theme);
+  // @include mat.button-color($mat-theme-app-theme, $color-variant: tertiary);
+  // @include mat.strong-focus-indicators-theme(purple);
+  // --mdc-filled-button-container-shape: 0px
+  
+}
+
+// .mat-tertiary {
+//   // @include mat.all-component-themes($mat-theme-app-theme);
+//   @include mat.button-color($mat-theme-app-theme, $color-variant: tertiary);
+//   @include mat.chips-color($mat-theme-app-theme, $color-variant: tertiary);
+// }
+
+body {
+  @include overrides.delta-tgm-all-override(m3-theme.$palettes);
+  // @include overrides.delta-tgm-button-override($mat-theme-app-theme.color)
+  // @include mat.button-overrides((
+  //   container-shape: 8px
+  // ));
+  // @include mat.chips-overrides((
+  //   container-shape-radius: 16px,
+  // ));
+  // $color: map.get(m3-theme.$palettes, primary);
+  // background-color: map.get($color, 90);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+@include mat.typography-hierarchy($mat-theme-app-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($mat-theme-app-theme);

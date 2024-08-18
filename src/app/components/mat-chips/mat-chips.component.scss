@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #dedede;
+}
+   
+section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #dedede;
+    width: 100%;
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.example-label {
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}

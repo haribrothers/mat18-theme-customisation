@@ -1,0 +1,11 @@
+@use 'button-override';
+@use 'chips-override';
+@use 'table-override';
+@use 'elevation-override';
+
+@mixin delta-tgm-all-override($theme-colors) {
+    @include button-override.delta-tgm-button-override($theme-colors);
+    @include chips-override.delta-tgm-chips-override($theme-colors);
+    @include table-override.delta-tgm-table-override($theme-colors);
+    @include elevation-override.delta-tgm-elevation-override($theme-colors);
+}

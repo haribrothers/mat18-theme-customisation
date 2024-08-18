@@ -1,0 +1,45 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../m3-theme' as m3-theme;
+
+@mixin delta-tgm-table-override($theme-colors) {
+    $primary-color: map.get($theme-colors, primary);
+    $accent-color: map.get($theme-colors, secondary);
+    $netural-color: map.get($theme-colors, neutral);
+    $netural-variant-color: map.get($theme-colors, neutral-variant);
+
+    @include mat.table-overrides((
+        header-container-height: 64px,
+        row-item-container-height: 32px,
+        row-item-outline-color: map.get($netural-color,90)
+    ));
+
+    @include mat.paginator-overrides((
+        container-background-color: map.get($netural-color,95),
+        container-size: 50px,
+        form-field-container-height: 10px,
+        form-field-container-vertical-padding: 2px,
+        select-trigger-text-size: 14px
+    ));
+
+    .mat-mdc-paginator {
+        // border: 1px solid map.get($netural-color,90);
+    }
+
+
+    // container-background-color
+
+    .mat-mdc-header-row {
+        background-color: map.get($netural-color, 95);
+    }
+    .mat-row-even {
+        background-color: map.get($netural-color, 98);
+    }
+
+    // .mat-tertiary {
+    //     @include mat.chips-overrides((
+    //         elevated-container-color: map.get($accent-color, 50),
+    //         label-text-color: map.get($netural-variant-color, 90),
+    //     ));
+    // }
+}
