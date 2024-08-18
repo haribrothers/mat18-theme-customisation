@@ -8,11 +8,12 @@ import { MatChipsComponent } from "./components/mat-chips/mat-chips.component";
 import { MatTable } from '@angular/material/table';
 import { MatTableComponent } from './components/mat-table/mat-table.component';
 import { MatFormfieldComponent } from './components/mat-formfield/mat-formfield.component';
+import { MatElevationComponent } from './components/mat-elevation/mat-elevation.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule, MatDividerModule, MatIconModule, MatButtonsComponent, MatChipsComponent, MatTableComponent, MatFormfieldComponent],
+  imports: [RouterOutlet, MatButtonModule, MatDividerModule, MatIconModule, MatButtonsComponent, MatChipsComponent, MatTableComponent, MatFormfieldComponent, MatElevationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

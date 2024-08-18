@@ -1,0 +1,10 @@
+<header>
+    <h2 class="mat-headline-medium">Table</h2>
+</header>
+<section>
+@for (item of eleItems; track $index) {
+    <div class="mat-ele-item" [ngClass]="'mat-elevation-z' + $index" >
+        {{$index}}
+    </div>
+}
+</section>
